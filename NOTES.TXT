@@ -1,0 +1,325 @@
+LIBRARIES:
+   import java.io.*
+   import java.util.* 
+
+xor : both same -> 0
+      else ->1
+      questions:
+
+      SWAP:
+         A=A^b
+         b=a^b
+
+      toogle the kth bit
+
+      unset or set the first set or unset bit (0 to 1 and vise versa)
+     
+      take 2 nos a and b check whether both are having same sign or not 
+
+facts:
+    In Java, the == operator has higher precedence than the & operator.
+
+    In Java, the == operator for comparing objects checks if the two references point to the same object in memory, not whether the contents of the objects are equal.
+    to check the equality of contents: "str1.equals(str2)"  is used
+
+CONDITIONAL PROGRAMMING : 
+           flow of programming depends on the conditions
+           conditions - help of operators
+           conditional constructs :
+                 1. if
+                        syntax:
+                            if (condition){
+                              statements (if block)
+                            }
+                        in simple if we don't have an alternative - if the condition is false, the screen would be blank
+                      In Java, the if statement expects a boolean expression to determine whether to execute the corresponding block of code. 
+                      Unlike languages like C, C++, and Python, where any non-zero value is considered true in a boolean context, in Java, only true is considered true, and false is considered false.
+                 2. if else
+                        syntax:
+                            if (condition){
+                              statements (if block)
+                            }
+                            else
+                            {
+                              statements (else block)
+                            }
+                 3. nested if else 
+                 4. else if ladder
+                            syntax:
+                            if (condition){
+                              statements (if block)
+                            }
+                            else if (condition){
+                              statements (else if block)
+                            }
+                            else
+                            {
+                              statements (else block)
+                            }
+                           only one of the 3 blocks would be executed
+                 5. switch
+                       we can write all switch program in else if ladder but all else if ladder program not in switch 
+
+jumping statements :
+    continue 
+    break
+
+ITERATIVE PROGRAMMING:
+    mostly all programs could be done using any loop 
+    the major difference is the syntax
+      loops :
+        for :
+          for(initialization; condition; inc/dec)
+          {
+            statements; (for block)
+          }
+          or
+          initialization;
+          for(; condition ;)
+          {
+            statements; (for block)
+            inc/dec;
+          }
+
+        while 
+          initialization;
+          while(condition)
+          {
+            statements; (while block)
+            inc/dec;
+          }
+        do while : will excetute the statements atleast once
+
+          do
+          {
+            statements; ( do while block)
+            inc/dec;
+          }while(condition)
+          
+        for each 
+      nested loop:
+          for every execution of outer loop inner loop will be executed completed
+
+note: hcf(a,b) * lcm(a,b) =a*b 
+
+Methods IN JAVA : functions specific to a class
+          group of statements combined to perform a particular task
+          ENHANCES READIBILITY
+
+          types:
+            1 pre-defined : eg -> printf(),print(),next(),etc
+                            have to call them only
+            2 user-defined :
+                          method declaration : telling the compiler we are going to use the function ahead
+                                  syntax: <return type> <methodname>(parameterlist);  # optional
+                                  eg: void display();
+                          method definition
+                                  syntax: void <methodname>()
+                                          {
+                                            working
+                                          }
+                                  eg:  void display()
+                                          {
+                                            System.out.print("hello world);
+                                          }
+                          method call 
+                                  syntax: objectname.methodname();
+                                  eg: ob.display();
+            
+          different ways to implement methods in jave:
+            no return type and no parameter
+            with return type and no parameter
+            no return type and with parameter
+            with return type and with parameter
+
+          pass by references
+          pass by value
+
+CLASSES: (eg: blueprint of house)
+         blueprint of objects
+         model of object
+         logical representation
+         contains variables and methods (eg no of rooms, area..)
+objects:
+         instance of class
+         it is physical representation
+         variables and methods of classs are passed to the objects 
+
+SYNTAX:
+        //cretaing a class
+          class<name of the class>
+          {
+              //creating variables
+              data_type <variable_name>;
+              data_type <variable_name2>;
+              .
+              .
+              .
+              //creating a methods
+              return_type <method_name()>
+              {
+                Statements;
+              }
+          }
+        //creating an object
+        <class_name> object_name = new <class_name>
+       
+                  eg: class ob = new class();
+                  object will occupy some memory in the heap for storing the variables 
+                              with some reference number ( or hash code)
+      
+       ob.hashcode()  // to get the referecne number 
+       
+       // calling a method
+       ob.<method_name()>     
+
+                   method will occupy some memory in the heap and point towards the ob 
+
+PARAMETERS:
+       ACTUAL : GIVEN TO FUNCTION
+       FORMAL : USED INSIDE THE FUNCTION
+
+Inheretence: using existing class features into new class
+           new class: atleast one new method 
+           base class(superclass) method can be called from derived class(subclass) instance
+           java avoids multiple inheritence
+           constructors are executed form top to bottom order i.e base class ->derived class1->...->derived classn
+           super key word used to execute parameterised constructor in inheritence
+      enscapsulation:  
+      abstraction: showing only relevant data 
+      polymorphism: ability to exist in many forms
+                      implements in 2 ways:
+                          static: method overloading
+                          rule: change in number of PARAMETERS
+                                change type of parameter
+                                change order of parameter
+                          dynamic: method overriding 
+                                   eg: update of an app : we don't need to uninstall and reinstall
+
+OBJECT CLASS:
+      predefined class in java 
+      act as root class for all the classes in java
+array:
+  collection of elements with similar data type
+          int[] arr= new int[4];
+          int arr[] = new int[4];
+2D Array: tabular form representation in rows and columns
+          int arr[][] = new int[2][3]
+          int[][] arr=new int[2][3]
+
+          initialization methods:
+               direct: 
+                     int[][] arr= new int{{2,4}{4,5}};
+                     int[][] arr= {{4,5},{6,2}};
+               accept method : for loop
+                      
+JDK: java development kit
+jvm: java virtual machine
+jit: just in time compiler
+javac: compiler (designed in c)
+java: interpreter (designed in java)
+
+exectuion flow:  
+   java source code -compiler-> bytecode (.class file)- jvm -> executes the program (object file)
+
+binding : linking and connecting your method call with the method definition
+    compilation(static) binding: binding during compile time
+                                 using method overloading 
+                                 eg:
+                                       class A{
+                                         public void sum(int a , int b){}
+                                         public void sum(int a, int b, intc){}
+                                         public static void main(String args[])
+                                         {
+                                           A obj = new A()
+                                           obj.sum(4,3);
+                                           obj.sum(4,2,3);
+                                         }
+                                       }
+    dynamic binding: binding during runtime
+                     using method overriding
+                     eg:
+                                      class A{
+                                         public void sum(int a , int b){}
+                                      }
+                                      class B extends A{
+                                         public void sum(int a, int b, intc){}
+                                         public static void main(String args[])
+                                         {
+                                           B obj = new B()
+                                           obj.sum(4,3);
+                                           obj.sum(4,2,3);
+                                         }
+                                       }
+Reference variable of a class
+    class methods of child class by creating a reference of base class
+    accessing subclass using base class
+    Syntax:
+      <class name> <reference variable name>;
+      eg: Classname Ref;
+
+Dynamic method dispatch
+    mechanism which resolves the calling of overridden method at runtime
+    use:
+      if we wish to use the base class method as well as the overridden method(dynamic polymorphism) in the child class 
+    we can not directly call a method of a class by using the reference variable
+    just like pointers 
+    eg:
+      class A{
+        msg();
+      }
+      class B extends A{
+        msg(); //changed (overridden)
+      }
+      main()
+      {
+        B obj = new B();
+        A rf;  //reference variable
+        rf=obj;
+        rf.msg(); 
+      }
+                     
+abstract class:
+      (class is incomplete so no object created)
+      a class with no instance
+      acts as a base class : has no object of its own can be used throught Inheretence
+      can have both abstract methods and concrete methods.
+      "abstract" keyword is used to create abstract class
+      abstract methods : methods with no definition only declaration
+      eg:
+            abstract class A{
+                 abstract void msg1(); //abstract method declaration
+                 void msg2()//concreate method
+                 {
+                    System.out.println("hello");
+                 }
+            }
+            class B extends A{
+                 
+            }
+PACKAGES IN JAVA:
+  inbuilt:
+       io package: input, output , object instances
+       utils package: scanner class
+  user made:
+       package <name>     //to make a package
+       import <package path>.*;  //importing
+
+exception handling:
+    divide by zero : error as nothing to store infinite value
+    if the exception is left unhandled : runtime error -> user can't understand the compiler error
+                          ->for user its software error(system fault) , he can uninstall the application 
+                          ->bad image of software
+                          ->by using try, catch and finally we handle such errors and display proper msg 
+                          ->it also makes sure that our program flow don't get effected
+
+    every try block must have atleast one catch block
+    we can use multiple catch block with a try block
+    finally block is not compulsory- it can be skipped
+    in java we can handle exception in 5 ways:
+                ~ try 
+                ~ catch
+                ~ finally
+                ~ throw
+                ~ throws
+    we can't place a statement btw try and catch block : we need to write catch immediately after try
